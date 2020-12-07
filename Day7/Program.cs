@@ -8,6 +8,7 @@ namespace AdventOfCode2020.Day7
         private static void Main()
         {
             Console.WriteLine($"First Challenge: {LuggageProcessor.CountBagsThatCanContain("shiny gold")}");
+            Console.WriteLine($"Second Challenge: {LuggageProcessor.HowManyBagsCouldBagWithGivenCodeContains("shiny gold")}");
         }
     }
 }

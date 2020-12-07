@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode2020.Day7.Challenge
 {
-    public class BagColor
+    public class BagConnection
     {
-        public int Id { get; set; }
-
         public string Code { get; set; }
 
-        public IList<BagConnection> CanContainsBags { get; set; }
+        public int Quantity { get; set; }
     }
 }

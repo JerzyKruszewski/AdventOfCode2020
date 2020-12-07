@@ -8,12 +8,17 @@ namespace AdventOfCode2020.Day7.Challenge
 {
     public class LuggageParser
     {
-        public static string[] ParseBagEntry(string entry)
+        private static string PreParseBagEntry(string entry)
         {
-            return RemoveNumbers(entry.Replace(".", "").Replace("bags", "bag").Replace("bag", "").Replace("contain", ",")).Split(",");
+            return entry.Replace(".", "").Replace("bags", "bag").Replace("bag", "").Replace("contain", ",");
         }
 
-        private static string RemoveNumbers(string arg)
+        public static string[] ParseBagEntry(string entry)
+        {
+            return PreParseBagEntry(entry).Split(", ");
+        }
+
+        public static string RemoveNumbers(string arg)
         {
             return arg.Replace("0", "").Replace("1", "").Replace("2", "").Replace("3", "").Replace("4", "")
                 .Replace("5", "").Replace("6", "").Replace("7", "").Replace("8", "").Replace("9", "");
