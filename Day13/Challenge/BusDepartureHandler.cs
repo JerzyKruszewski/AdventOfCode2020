@@ -78,7 +78,8 @@ namespace AdventOfCode2020.Day13.Challenge
             return nextBus.Id * (nextDepartureTimestamp - _timestamp);
         }
 
-        //Faster
+        //Faster (With help of reddit user u/HatDear2704)
+        //Original Solution (https://github.com/TomHemery/AdventOfCode2020/blob/main/src/Puzzles/TimetableChecker.cs)
         public long FindEarliestTimestamp(string busesId = "")
         {
             IList<Bus> buses;
@@ -133,13 +134,8 @@ namespace AdventOfCode2020.Day13.Challenge
 
                 bool isValid = true;
 
-                foreach (Bus item in buses)
+                foreach (Bus item in buses.Skip(1))
                 {
-                    if (item == null)
-                    {
-                        continue;
-                    }
-
                     if ((i + item.Index) % item.Id != 0)
                     {
                         isValid = false;
